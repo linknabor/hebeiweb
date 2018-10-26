@@ -17,7 +17,7 @@
 
 .footer li {
 	float: left;
-	width: 33%;
+	width: 25%;
 	text-align: center;
 	height: 100%
 }
@@ -604,21 +604,6 @@ img{
     color: #ff8a00;
     border-color: #ff8a00;
 }
-
-.notice-tab-title {
-    display: inline-block;
-    width: 33%;
-    color: #a6937c;
-    font-size: 12px;
-    text-align: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #d4cfc8;
-}
-.notice-tab-title.active {
-    color: #47B3FF;
-    border-color: #47B3FF;
-}
-
 
 /*Util class*/
 .clearfix:before, .clearfix:after {

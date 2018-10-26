@@ -17,7 +17,7 @@ avalon.ready(function(){
 		$id:"root",
 		model:{},
 		titlecontent:"反馈对象：",
-		fbtype:["物业","居委会","兴社区"],
+		fbtype:["物业","居委会","合协社区"],
 		modelBox:"list",
 		closebox:function(){
 			closeBox();

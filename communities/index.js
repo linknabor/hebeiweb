@@ -26,9 +26,9 @@ avalon.ready(function() {
 		},
         e = function(n) {
 			console.log(JSON.stringify(n));
-			o.threads = n.result[0];
-			o.userSectId = n.result[1];
-			o.threads_count = n.result[0].length;
+			o.threads = n.result;
+			o.threads_count = n.result.length;
+			
 			if(firstQuery) {
        	    	commonui.initPage();
        	    	firstQuery = false;
@@ -156,21 +156,14 @@ avalon.ready(function() {
 		imgUrls: [],
 		previewLink: [],
 		categoryCN: '',
-		userSectId: 0,
 		
 		gotoDetail:function(threadId){
         	location.href="threadDetail.html?threadId="+threadId;
         },
         
         publicnew:function(){
-        	if(o.userSectId ==0 || o.userSectId=='' || o.userSectId==null)
-        	{
-        		alert("用户没有绑定房屋。");
-        		return;
-        	}else
-        	{
-        		location.href="addThread.html?category="+o.category;
-        	}
+        	
+        	location.href="addThread.html?category="+o.category;
         },
         
         viewSrcImg:function(threadId, index){
@@ -229,9 +222,7 @@ avalon.ready(function() {
 	
 	function getCategoryType(){
 		o.category=getUrlParam("category");
-		o.categoryCN="管家服务";
-		
-		/*if("1"==o.category){
+		if("1"==o.category){
 			o.categoryCN="户外活动";
 		}else if("2"==o.category){
 			o.categoryCN="宠物宝贝";
@@ -248,8 +239,8 @@ avalon.ready(function() {
 		}else if("8"==o.category){
 			o.categoryCN="都市丽人";
 		}else{
-			o.categoryCN="管家服务";
-		}*/
+			o.categoryCN="邻里叽歪";
+		}
 	}
 	
 	function setCategory(){
@@ -321,14 +312,13 @@ avalon.ready(function() {
 			filter : filter	
     	},
         e = function(n) {
-    		if(n.result[0].length==0) {
+    		if(n.result.length==0) {
                 hasNext=false;
                 isloadPage = false;
             	commonui.showMessage("没有更多啦");
             	commonui.hideAjaxLoading();
     		} else {
-    			o.threads= o.threads.concat(n.result[0]);
-    			o.userSectId = n.result[1];
+    			o.threads= o.threads.concat(n.result);
                 isloadPage = false;
                 commonui.hideAjaxLoading();
     		}

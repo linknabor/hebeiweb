@@ -1,17 +1,16 @@
 var MasterConfig = function() {
     var t = {
                 
-        baseUrl: "https://www.e-shequ.com/dhzj3/wechat/hexie/wechat/",
-        basePageUrl:"https://www.e-shequ.com/dhzj3/weixin/",
-        appId: "wxe8dea53aad1a93b9",
+        baseUrl: "https://www.e-shequ.com/sjz/wechat/hexie/wechat/",
+        basePageUrl:"https://www.e-shequ.com/sjz/weixin/",
+        appId: "wx02a5197cbf22b0ac",
         
         oauthUrl: "https://open.weixin.qq.com/connect/oauth2/authorize?",
-        oauthUrlPostFix:"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect",
-		oauthUrlPostSilent:"&response_type=code&scope=snsapi_base&state=123#wechat_redirect",
-        bindAppId: "wxe8dea53aad1a93b9",
+        oauthUrlPostFix:"&response_type=code&scope=snsapi_base&state=123#wechat_redirect",
+        bindAppId: "wxbd214f5765f346c1",
         
 		payPageFolder:"https://www.e-shequ.com/pay/",
-        payPageSuffix:"zj3",		//hexie
+        payPageSuffix:"sjz",		//hexie
 
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
         shop_name: "兴社区",
@@ -37,7 +36,7 @@ var Config = function() {
             no_goods: "更多新品正在陆续推出..."
         },
         user_info: {
-            avatar: "https://www.e-shequ.com/dhzj3/weixin/static/images/logo.jpg",
+            avatar: "https://www.e-shequ.com/sjz/weixin/static/images/logo.jpg",
             nickname: "游客",
             levelname: "普通会员"
         },
@@ -47,7 +46,7 @@ var Config = function() {
             2 : "大楼VIP"
         },
         coupon:{
-            seedImg:"https://www.e-shequ.com/dhzj3/weixin/static/img/banner/banner_market_shuiguo.jpg"
+            seedImg:"https://www.e-shequ.com/sjz/weixin/static/img/banner/banner_market_shuiguo.jpg"
         }
     },
     e = {};
@@ -272,7 +271,19 @@ function toRegisterAndBack(){
 	var n = location.origin + common.removeParamFromUrl(["from", "bind", "code", "share_id", "isappinstalled", "state", "m", "c", "a"]);
 	location.href=MasterConfig.C('basePageUrl')+"person/register.html?comeFrom="+encodeURIComponent(n);
 }
+/*增加访问统计*/
+var _hmt = _hmt || []; !
 
+function() {
+    var e = document.createElement("script");
+    e.src = "//hm.baidu.com/hm.js?" + MasterConfig.C("statistics").baidu_code;
+    var o = document.getElementsByTagName("script")[0];
+    o.parentNode.insertBefore(e, o)
+} (),
+/**
+function() {
+    document.write(MasterConfig.C("statistics").cnzz_script)
+} (),**/
 AJAXFlag = !0;
 var common = {
     isDebug: !1,
@@ -433,4 +444,4 @@ var commonui = {
 
 checkBindAndBind();
 checkCodeAndLogin();
-common.setTitle(MasterConfig.C("shop_name"));
+//common.setTitle(MasterConfig.C("shop_name") + "社区");

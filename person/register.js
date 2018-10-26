@@ -47,47 +47,6 @@ avalon.ready(function() {
 				alert("注册成功。");
 				location.href = forwardPage;
 			}
-    		
-//    		var isInAct = "";
-//    		function sendMsg(){
-//				
-//				var n = "GET",
-//	    		a = "sendNotification",
-//	    		i = null,
-//	    		e = function(n) {
-//	    			isInAct = n.result;
-//	    			var page = "";
-//		    		if("true"==isInAct){
-//		    			page = MasterConfig.C('basePageUrl')+"wuye/act.html";
-//		    		}
-//					
-//					var forwardPage = "";
-//					
-//					if(o.comeFrom){
-//		        		forwardPage = o.comeFrom;
-//		        	} else {
-//		        		forwardPage = MasterConfig.C('basePageUrl')+"person/index.html";
-//		        	}
-//					
-//					if (page) {
-//						location.href = page+"?comeFrom="+forwardPage;
-//					}else{
-//						alert("注册成功。");
-//						location.href = forwardPage;
-//					}
-//	    		},
-//	    		r = function() {
-//					if(o.comeFrom){
-//		        		location.href = o.comeFrom;
-//		        	} else {
-//		        		location.href = MasterConfig.C('basePageUrl')+"person/index.html";
-//		        	}
-//	    		};
-//	    		common.invokeApi(n, a, i, null, e, r)
-//	    		
-//			}
-//    		sendMsg();
-			
         },
         r = function(n) {
         	commonui.hideAjaxLoading();
