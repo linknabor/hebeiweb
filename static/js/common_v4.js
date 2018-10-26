@@ -1,8 +1,8 @@
 var MasterConfig = function() {
     var t = {
                 
-        baseUrl: "https://www.e-shequ.com/sjz/wechat/hexie/wechat/",
-        basePageUrl:"https://www.e-shequ.com/sjz/weixin/",
+        baseUrl: "https://www.e-shequ.com/shijiazhuang/wechat/hexie/wechat/",
+        basePageUrl:"https://www.e-shequ.com/shijiazhuang/weixin/",
         appId: "wx02a5197cbf22b0ac",
         
         oauthUrl: "https://open.weixin.qq.com/connect/oauth2/authorize?",
@@ -10,7 +10,7 @@ var MasterConfig = function() {
         bindAppId: "wxbd214f5765f346c1",
         
 		payPageFolder:"https://www.e-shequ.com/pay/",
-        payPageSuffix:"sjz",		//hexie
+        payPageSuffix:"shijiazhuang",		//hexie
 
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
         shop_name: "兴社区",
