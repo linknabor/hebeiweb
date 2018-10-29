@@ -28,7 +28,8 @@ avalon.ready(function() {
         	level:"",
         	zhima:"0",
         	lvdou:"0",
-        	couponCount:0
+        	couponCount:0,
+          
         },
 
 		//fix me
