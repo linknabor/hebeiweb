@@ -3,17 +3,17 @@ var MasterConfig = function() {
                 
         baseUrl: "https://www.e-shequ.com/shijiazhuang/wechat/hexie/wechat/",
         basePageUrl:"https://www.e-shequ.com/shijiazhuang/weixin/",
-        appId: "wx02a5197cbf22b0ac",
+        appId: "wxbd214f5765f346c1",
         
         oauthUrl: "https://open.weixin.qq.com/connect/oauth2/authorize?",
         oauthUrlPostFix:"&response_type=code&scope=snsapi_base&state=123#wechat_redirect",
-        bindAppId: "wxbd214f5765f346c1",
+        bindAppId: "wx02a5197cbf22b0ac",
         
 		payPageFolder:"https://www.e-shequ.com/pay/",
         payPageSuffix:"shijiazhuang",		//hexie
 
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
-        shop_name: "兴社区",
+        shop_name: "兴",
         
         is_debug:true,
        
@@ -444,4 +444,4 @@ var commonui = {
 
 checkBindAndBind();
 checkCodeAndLogin();
-//common.setTitle(MasterConfig.C("shop_name") + "社区");
+common.setTitle(MasterConfig.C("shop_name") + "社区");
