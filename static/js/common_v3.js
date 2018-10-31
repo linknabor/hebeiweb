@@ -13,7 +13,7 @@ var MasterConfig = function() {
         appId: "wxbd214f5765f346c1",
         
         oauthUrl: "https://open.weixin.qq.com/connect/oauth2/authorize?",
-        oauthUrlPostFix:"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect",
+        oauthUrlPostFix:"&response_type=code&scope=snsapi_base&state=123#wechat_redirect",
         bindAppId: "wx02a5197cbf22b0ac",
         
 		//payPageFolder:"https://test.e-shequ.com/pay/",
