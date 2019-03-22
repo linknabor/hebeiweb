@@ -13,18 +13,18 @@ var MasterConfig = function() {
         // bindAppId: "wx9ffe0a2b5a64a285",
 
         baseUrl: /127|test/.test(location.origin)?'https://test.e-shequ.com/wechat/hexie/wechat/':
-        /uat/.test(location.origin)?'https://uat.e-shequ.com/wechat/hexie/wechat/':
+        /uat/.test(location.origin)?'https://uat.e-shequ.com/xsq/wechat/hexie/wechat/':
         'https://www.e-shequ.com/shijiazhuang/wechat/hexie/wechat/',
         
         basePageUrl:/127|test/.test(location.origin)?'https://test.e-shequ.com/weixin/':
-        /uat/.test(location.origin)?'https://uat.e-shequ.com/weixin/':
+        /uat/.test(location.origin)?'https://uat.e-shequ.com/xsq/weixin/':
         'https://www.e-shequ.com/shijiazhuang/weixin/',
         
-        payPageFolder:/127|test/.test(location.origin)?'https://test.e-shequ.com/pay/':
-        /uat/.test(location.origin)?'https://uat.e-shequ.com/pay/':
-        'https://www.e-shequ.com/pay',
+        // payPageFolder:/127|test/.test(location.origin)?'https://test.e-shequ.com/pay/':
+        // /uat/.test(location.origin)?'https://uat.e-shequ.com/weixin/':
+        // 'https://www.e-shequ.com/pay',
 
-        payPageSuffix:"shijiazhuang",
+        // payPageSuffix:"shijiazhuang",
         
         appId: /127|test/.test(location.origin)?'wx95f46f41ca5e570e':
         /uat/.test(location.origin)?'wx9ffe0a2b5a64a285':
@@ -453,7 +453,6 @@ let common = {
 
 checkBindAndBind();
 checkCodeAndLogin();
-common.setTitle(MasterConfig.C("shop_name") );
+common.setTitle(MasterConfig.C("shop_name")+"社区");
 
 export default common;
-export {Config as add};
