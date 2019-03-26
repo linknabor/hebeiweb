@@ -1,16 +1,7 @@
-import wx from "weixin-js-sdk"
+import wx from "weixin-js-sdk";
 var MasterConfig = function() {
     
     var t = {
-        // baseUrl: "https://test.e-shequ.com/shijiazhuang/wechat/hexie/wechat/",        
-        // basePageUrl:"https://test.e-shequ.com/weixin/",
-        // payPageFolder:"https://test.e-shequ.com/pay/",
-        //test
-        // appId: "wx95f46f41ca5e570e",
-        // bindAppId: "wx95f46f41ca5e570e",
-        //uat
-        // appId: "wx9ffe0a2b5a64a285",
-        // bindAppId: "wx9ffe0a2b5a64a285",
 
         baseUrl: /127|test/.test(location.origin)?'https://test.e-shequ.com/wechat/hexie/wechat/':
         /uat/.test(location.origin)?'https://uat.e-shequ.com/xsq/wechat/hexie/wechat/':
@@ -19,13 +10,7 @@ var MasterConfig = function() {
         basePageUrl:/127|test/.test(location.origin)?'https://test.e-shequ.com/weixin/':
         /uat/.test(location.origin)?'https://uat.e-shequ.com/xsq/weixin/':
         'https://www.e-shequ.com/shijiazhuang/weixin/',
-        
-        // payPageFolder:/127|test/.test(location.origin)?'https://test.e-shequ.com/pay/':
-        // /uat/.test(location.origin)?'https://uat.e-shequ.com/weixin/':
-        // 'https://www.e-shequ.com/pay',
 
-        // payPageSuffix:"shijiazhuang",
-        
         appId: /127|test/.test(location.origin)?'wx95f46f41ca5e570e':
         /uat/.test(location.origin)?'wx9ffe0a2b5a64a285':
         'wxbd214f5765f346c1',
@@ -36,7 +21,7 @@ var MasterConfig = function() {
 
         oauthUrl: "http://open.weixin.qq.com/connect/oauth2/authorize?",
         oauthUrlPostFix:"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect",
-		oauthUrlPostSilent:"&response_type=code&scope=snsapi_base&state=123#wechat_redirect",
+        oauthUrlPostSilent:"&response_type=code&scope=snsapi_base&state=123#wechat_redirect",
         
         
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
@@ -283,7 +268,7 @@ function isRegisted(){
 
 function toRegisterAndBack(){
     var n = location.origin + common.removeParamFromUrl(["from", "bind", "code", "share_id", "isappinstalled", "state", "m", "c", "a"]);
-    location.href=MasterConfig.C('basePageUrl')+"person/index.html?start=123#/register?comeFrom="+encodeURIComponent(n)+common.addParamHsah();
+    location.href=MasterConfig.C('basePageUrl')+"person/index.html?#/register?comeFrom="+encodeURIComponent(n)+common.addParamHsah();
 }
 
 let AJAXFlag = !0;
@@ -450,7 +435,41 @@ let common = {
 
 
 };
-
+var commonui = {
+        initPage:function() {
+            if ($("#LoadingBar") != null) {
+                $("#LoadingBar").css("display","none");
+                $("#fade").css("display","none");
+            }
+        },
+        loadingPage:function() {
+            if ($("#LoadingBar") != null) {
+                $("#LoadingBar").css("display","block");
+                $("#fade").css("display","block");
+            }
+        },
+        showMessage:function(msg) {
+            commonui.showMsg(msg, 1500);
+        },
+        showMsg:function(msg, times) {
+            commonui.hideAjaxLoading();
+            if ($("#phoneErro") != null) {
+                $("#phoneErro").html(msg);
+                $("#phoneErro").fadeIn("slow");
+                setTimeout('$("#phoneErro").fadeOut("slow")', times);
+            }
+        },
+        showAjaxLoading:function() {
+            if ($("#phoneAjax") != null) {
+                $("#phoneAjax").removeClass("hidden");
+            }
+        },
+        hideAjaxLoading:function() {
+            if ($("#phoneAjax") != null) {
+                $("#phoneAjax").addClass("hidden");
+            }
+        }
+}
 checkBindAndBind();
 checkCodeAndLogin();
 common.setTitle(MasterConfig.C("shop_name")+"社区");
